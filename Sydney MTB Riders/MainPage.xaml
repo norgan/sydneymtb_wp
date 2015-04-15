@@ -54,8 +54,12 @@
             <!--Panorama item two-->
             <phone:PanoramaItem x:Name="Mapping" Header="Map">
                 <Grid x:Name="MapDisplay" Grid.Row="1" Margin="12,0,12,0">
-                    <maps:Map x:Name="map1" LandmarksEnabled="False" Loaded="map1_Loaded" Height="430" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="425"/>
-                    <Button Content="Me" Height="72" HorizontalAlignment="Left" Margin="12,426,0,-15" Name="btnMe" VerticalAlignment="Top" Width="84" Click="btnMe_Click" BorderThickness="2" />
+                    <maps:Map x:Name="map1" LandmarksEnabled="True" Loaded="map1_Loaded" Height="430" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="425"/>
+                    <Button Content="" Height="72" HorizontalAlignment="Left" Margin="12,426,0,-15" Name="btnMe" VerticalAlignment="Top" Width="84" Click="btnMe_Click" BorderThickness="2" >
+                        <Button.Background>
+                            <ImageBrush Stretch="Uniform" ImageSource="BicycleIcon.png"/>
+                        </Button.Background>
+                    </Button>
                     <Button Content="@" Height="72" HorizontalAlignment="Left" Margin="312,426,0,-15" Name="btnEmail" VerticalAlignment="Top" Width="84" Click="btnEmail_Click" BorderThickness="2" />
                     <Button Content="SMS" Height="72" HorizontalAlignment="Left" Margin="214,426,0,-15" Name="btnSMS" VerticalAlignment="Top" Width="98" Click="btnSMS_Click" BorderThickness="2" />
                 </Grid>
@@ -64,26 +68,26 @@
             <phone:PanoramaItem x:Name="MaintenancePage" Header="Maintenance and Repairs">
                 <ListBox Name="MaintinenceList" Height="500" HorizontalAlignment="Left" Margin="18,0,0,0" VerticalAlignment="Top" Width="400" ScrollViewer.VerticalScrollBarVisibility="Auto">
                     <Button Content="Gears" Foreground="White" Height="115" Margin="150,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" Click="Button_Gears_1">
-                		<Button.Background>
-                			<ImageBrush Stretch="Fill" ImageSource="/gears.jpg"/>
-                		</Button.Background>
-                	</Button>
+                        <Button.Background>
+                            <ImageBrush Stretch="Fill" ImageSource="/gears.jpg"/>
+                        </Button.Background>
+                    </Button>
                     <Button Content="Wheels and Hubs" Height="177" Margin="90,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_WAH_1">
-                		<Button.Background>
-                			<ImageBrush Stretch="Fill" ImageSource="wheels.jpg"/>
-                		</Button.Background>
-                	</Button>
+                        <Button.Background>
+                            <ImageBrush Stretch="Fill" ImageSource="wheels.jpg"/>
+                        </Button.Background>
+                    </Button>
                     <Button Content="Cockpit" Height="133" Margin="120,0,0,0" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Click="Button_ACC_1" Width="169">
-                		<Button.Background>
-                			<ImageBrush Stretch="Fill" ImageSource="/accessories.jpg"/>
-                		</Button.Background>
-                	</Button>
+                        <Button.Background>
+                            <ImageBrush Stretch="Fill" ImageSource="/accessories.jpg"/>
+                        </Button.Background>
+                    </Button>
                 </ListBox>
             </phone:PanoramaItem>
             <!--Panorama Item Four-->
             <phone:PanoramaItem x:Name="AboutSydMTB" Header="About">
                 <ListBox Name="AboutList" Height="500" HorizontalAlignment="Left" Margin="18,0,0,0" VerticalAlignment="Top" Width="400" ScrollViewer.VerticalScrollBarVisibility="Auto">
-                        <Grid x:Name="About" ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                    <Grid x:Name="About" ScrollViewer.HorizontalScrollBarVisibility="Auto">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
@@ -103,7 +107,7 @@
 •Most of all, to have fun!" />
                         <TextBlock Grid.Row="4" TextWrapping="Wrap" Text="If you're interested in joining the Club, you can register for an account here http://sydneymtb.org. It's quick and easy – and free to sign up." />
                         <TextBlock Grid.Row="5" TextWrapping="Wrap" Text="There are also various Membership levels for those who wish to participate in social rides or even races – all registered through MTBA as part of our official club affiliation." />
-                        </Grid>
+                    </Grid>
                 </ListBox>
             </phone:PanoramaItem>
             <!-- Panorama Item Five-->
@@ -119,12 +123,17 @@
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
                         <toolkit:ToggleSwitch Content="Enable Location" Name="EnableLocation" Checked="EnableLocation_Checked" Unchecked="EnableLocation_Unchecked" />
-                        <TextBlock Grid.Row="1" TextWrapping="Wrap" Text="Your privacy is important to us. This application is able to show and track your location. This information may be stored and shared. You may disable Location Services." />
+                        <TextBlock Grid.Row="1" TextWrapping="Wrap" FontSize="16" Text="Your privacy is important to us. This application is able to show and track your location. This information may be stored and shared. You may disable Location Services." />
+                        <TextBlock Grid.Row="2" TextWrapping="Wrap" FontSize="32" Text="Map Settings" />
+                        <TextBlock Grid.Row="3" TextWrapping="Wrap" FontSize="22" Text="Map Display Mode" Margin="0,10,0,0" />
+                        <RadioButton Content="Aerial" Height="72" HorizontalAlignment="Left" Margin="150,5,0,-77" Name="btnAerial" VerticalAlignment="Top" Width="125" Click="btnAerial_Click" BorderThickness="2" Grid.Row="5" />
+                        <RadioButton Content="Hybrid" Height="72" HorizontalAlignment="Left" Margin="0,5,0,-77" Name="btnHybrid" VerticalAlignment="Top" Width="134" Click="btnHybrid_Click" BorderThickness="2" Grid.Row="5" />
+                        <RadioButton Content="Road" Height="72" HorizontalAlignment="Left" Margin="280,5,-13,-77" Name="btnRoad" VerticalAlignment="Top" Width="118" Click="btnRaod_Click" BorderThickness="2" Grid.Row="5" />
                     </Grid>
                 </ListBox>
             </phone:PanoramaItem>
             <!--<Border BorderBrush="{StaticResource PhoneSubtleBrush}" BorderThickness="1" Height="2" HorizontalAlignment="Left" Margin="20,88,0,0" Name="border1" VerticalAlignment="Top" Width="438" />-->
-       </phone:Panorama>
+        </phone:Panorama>
         <StackPanel x:Name="loadingContentStackPanel" VerticalAlignment="Top" Canvas.ZIndex="1000" Margin="0,401,0,0"/>
     </Grid>
 

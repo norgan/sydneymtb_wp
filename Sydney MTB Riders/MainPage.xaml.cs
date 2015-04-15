@@ -82,10 +82,12 @@ namespace Sydney_MTB_Riders
         }
 
         // Placeholder code to contain the ApplicationID and AuthenticationToken 
+        // Reference https://msdn.microsoft.com/library/windows/apps/jj207045(v=vs.105).aspx#BKMK_CartographicModes
         private void map1_Loaded(object sender, RoutedEventArgs e)
         {
             MapsSettings.ApplicationContext.ApplicationId = "e7cb46fd-ef6b-48e8-ae93-0b6b312f98f4";
             MapsSettings.ApplicationContext.AuthenticationToken = "3_tZpq-vuX1liM_tDbSnyg";
+            map1.CartographicMode = MapCartographicMode.Terrain;
         }
 
 
@@ -222,6 +224,7 @@ namespace Sydney_MTB_Riders
 
         GeoCoordinate currentLocation = null;
         MapLayer locationLayer = null;
+
 
         private async void GetLocation()
         {
@@ -389,7 +392,26 @@ namespace Sydney_MTB_Riders
             CenterMapOnLocation();
 
         }
-        
+
+        private void btnAerial_Click(object sender, RoutedEventArgs e)
+        {
+
+            map1.CartographicMode = MapCartographicMode.Aerial;
+
+        }
+        private void btnHybrid_Click(object sender, RoutedEventArgs e)
+        {
+
+            map1.CartographicMode = MapCartographicMode.Hybrid;
+
+        }
+        private void btnRaod_Click(object sender, RoutedEventArgs e)
+        {
+
+            map1.CartographicMode = MapCartographicMode.Road;
+
+        }
+
         // Toggles
 
         private void EnableLocation_Checked(object sender, RoutedEventArgs e)
